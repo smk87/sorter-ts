@@ -1,10 +1,8 @@
 "use strict";
-var Sorter = /** @class */ (function () {
-    function Sorter(collection) {
-        this.collection = collection;
-    }
-    return Sorter;
-}());
-var sorter = new Sorter([10, 3, -1, 5]);
+Object.defineProperty(exports, "__esModule", { value: true });
+var Sorter_1 = require("./Sorter");
+var NumberCollection_1 = require("./NumberCollection");
+var numbersCollection = new NumberCollection_1.NumbersCollection([10, 3, -5, 0]);
+var sorter = new Sorter_1.Sorter(numbersCollection);
 sorter.sort();
 console.log(sorter.collection);
