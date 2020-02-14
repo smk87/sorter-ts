@@ -1,23 +1,28 @@
-export class CharactersCollection {
-  constructor(private data: string) {}
+import { Sorter } from "./Sorter";
 
-  get length(): number {
-    return this.data.length;
-  }
+export class CharactersCollection extends Sorter {
+         constructor(public data: string) {
+           super();
+         }
 
-  compare(leftIndex: number, rightIndex: number): boolean {
-    return (
-      this.data[leftIndex].toLowerCase() > this.data[rightIndex].toLowerCase()
-    );
-  }
+         get length(): number {
+           return this.data.length;
+         }
 
-  swap(leftIndex: number, rightIndex: number): void {
-    const characters = this.data.split("");
+         compare(leftIndex: number, rightIndex: number): boolean {
+           return (
+             this.data[leftIndex].toLowerCase() >
+             this.data[rightIndex].toLowerCase()
+           );
+         }
 
-    const leftHand = characters[leftIndex];
-    characters[leftIndex] = characters[rightIndex];
-    characters[rightIndex] = leftHand;
+         swap(leftIndex: number, rightIndex: number): void {
+           const characters = this.data.split("");
 
-    this.data = characters.join("");
-  }
-}
+           const leftHand = characters[leftIndex];
+           characters[leftIndex] = characters[rightIndex];
+           characters[rightIndex] = leftHand;
+
+           this.data = characters.join("");
+         }
+       }
